@@ -1,0 +1,1 @@
+<div id="chesspuzzles-panel-home-div"></div>

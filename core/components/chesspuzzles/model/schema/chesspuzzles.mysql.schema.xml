@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model package="chesspuzzles" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM" phpdoc-package="chesspuzzles"
+       version="1.1">
+
+    <object class="ChessPuzzlesLevel" table="chesspuzzles_level" extends="xPDOSimpleObject">
+        <field key="title" dbtype="varchar" precision="255" phptype="string" null="false" default=""/>
+        <field key="description" dbtype="text" phptype="string" null="true"/>
+        <index alias="title" name="title" primary="false" unique="false" type="BTREE">
+            <column key="title" length="" collation="A" null="false" />
+        </index>
+        <composite alias="Task" class="ChessPuzzlesTask" local="id" foreign="level_id" cardinality="many" owner="local" />
+        <composite alias="Test" class="ChessPuzzlesTest" local="id" foreign="level_id" cardinality="many" owner="local" />
+    </object>
+
+    <object class="ChessPuzzlesTask" table="chesspuzzles_task" extends="xPDOSimpleObject">
+        <field key="title" dbtype="varchar" precision="255" phptype="string" null="false" default=""/>
+        <field key="description" dbtype="text" phptype="string" null="true"/>
+        <field key="ball_succ" dbtype="int" precision="3" phptype="integer" attributes="unsigned" null="false" default="" />
+        <field key="ball_err" dbtype="int" precision="3" phptype="integer" attributes="unsigned" null="false" default="" />
+        <field key="position_start" dbtype="varchar" precision="255" phptype="string" null="false" default=""/>
+        <field key="result" dbtype="text" phptype="json" null="true"/>
+        <field key="active" dbtype="tinyint" precision="1" phptype="boolean" null="false" default="1"/>
+        <field key="level_id" dbtype="int" precision="10" phptype="integer" attributes="unsigned" null="true" />
+        <field key="lesson_id" dbtype="int" precision="10" phptype="integer" attributes="unsigned" null="true" />
+
+        <index alias="title" name="title" primary="false" unique="false" type="BTREE">
+            <column key="title" length="" collation="A" null="false" />
+        </index>
+        <index alias="ball_succ" name="ball_succ" primary="false" unique="false" type="BTREE">
+            <column key="ball_succ" length="" collation="A" null="false" />
+        </index>
+        <index alias="ball_err" name="ball_err" primary="false" unique="false" type="BTREE">
+            <column key="ball_err" length="" collation="A" null="false" />
+        </index>
+        <index alias="active" name="active" primary="false" unique="false" type="BTREE">
+            <column key="active" length="" collation="A" null="false" />
+        </index>
+        <index alias="level_id" name="level_id" primary="false" unique="false" type="BTREE">
+            <column key="level_id" length="" collation="A" null="false" />
+        </index>
+        <index alias="lesson_id" name="lesson_id" primary="false" unique="false" type="BTREE">
+            <column key="lesson_id" length="" collation="A" null="false" />
+        </index>
+        <aggregate alias="Level" class="ChessPuzzlesLevel" local="level_id" foreign="id" cardinality="one" owner="foreign" />
+    </object>
+
+    <object class="ChessPuzzlesTest" table="chesspuzzles_test" extends="xPDOSimpleObject">
+        <field key="title" dbtype="varchar" precision="255" phptype="string" null="false" default=""/>
+        <field key="description" dbtype="text" phptype="string" null="true"/>
+        <field key="ball_succ" dbtype="int" precision="3" phptype="integer" attributes="unsigned" null="false" default="" />
+        <field key="ball_err" dbtype="int" precision="3" phptype="integer" attributes="unsigned" null="false" default="" />
+        <field key="position_start" dbtype="varchar" precision="255" phptype="string" null="false" default=""/>
+        <field key="result" dbtype="text" phptype="json" null="true"/>
+        <field key="active" dbtype="tinyint" precision="1" phptype="boolean" null="false" default="1"/>
+        <field key="level_id" dbtype="int" precision="10" phptype="integer" attributes="unsigned" null="true" />
+        <field key="lesson_id" dbtype="int" precision="10" phptype="integer" attributes="unsigned" null="true" />
+
+        <index alias="title" name="title" primary="false" unique="false" type="BTREE">
+            <column key="title" length="" collation="A" null="false" />
+        </index>
+        <index alias="ball_succ" name="ball_succ" primary="false" unique="false" type="BTREE">
+            <column key="ball_succ" length="" collation="A" null="false" />
+        </index>
+        <index alias="ball_err" name="ball_err" primary="false" unique="false" type="BTREE">
+            <column key="ball_err" length="" collation="A" null="false" />
+        </index>
+        <index alias="active" name="active" primary="false" unique="false" type="BTREE">
+            <column key="active" length="" collation="A" null="false" />
+        </index>
+        <index alias="level_id" name="level_id" primary="false" unique="false" type="BTREE">
+            <column key="level_id" length="" collation="A" null="false" />
+        </index>
+        <index alias="lesson_id" name="lesson_id" primary="false" unique="false" type="BTREE">
+            <column key="lesson_id" length="" collation="A" null="false" />
+        </index>
+        <aggregate alias="Level" class="ChessPuzzlesLevel" local="level_id" foreign="id" cardinality="one" owner="foreign" />
+    </object>
+</model>
