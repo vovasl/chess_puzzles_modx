@@ -63,6 +63,8 @@ class ChessPuzzlesHomeManagerController extends modExtraManagerController
         $this->addJavascript($this->ChessPuzzles->config['jsUrl'] . 'mgr/widgets/levels.windows.js');
         $this->addJavascript($this->ChessPuzzles->config['jsUrl'] . 'mgr/widgets/tasks.grid.js');
         $this->addJavascript($this->ChessPuzzles->config['jsUrl'] . 'mgr/widgets/tasks.windows.js');
+        $this->addJavascript($this->ChessPuzzles->config['jsUrl'] . 'mgr/widgets/tests.grid.js');
+        $this->addJavascript($this->ChessPuzzles->config['jsUrl'] . 'mgr/widgets/tests.windows.js');
         $this->addJavascript($this->ChessPuzzles->config['jsUrl'] . 'mgr/widgets/home.panel.js');
         $this->addJavascript($this->ChessPuzzles->config['jsUrl'] . 'mgr/sections/home.js');
 

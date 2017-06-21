@@ -20,7 +20,7 @@ ChessPuzzles.panel.Home = function (config) {
             border: true,
             hideMode: 'offsets',
             items: [{
-                title: _('chesspuzzles_items'),
+                title: _('chesspuzzles_levels'),
                 layout: 'anchor',
                 items: [{
                     html: _('chesspuzzles_intro_msg'),
@@ -30,13 +30,23 @@ ChessPuzzles.panel.Home = function (config) {
                     cls: 'main-wrapper',
                 }]
             }, {
-                title: _('chesspuzzles_items'),
+                title: _('chesspuzzles_tasks'),
                 layout: 'anchor',
                 items: [{
                     html: _('chesspuzzles_intro_msg'),
                     cls: 'panel-desc',
                 }, {
                     xtype: 'chesspuzzles-grid-tasks',
+                    cls: 'main-wrapper',
+                }]
+            }, {
+                title: _('chesspuzzles_tests'),
+                layout: 'anchor',
+                items: [{
+                    html: _('chesspuzzles_intro_msg'),
+                    cls: 'panel-desc',
+                }, {
+                    xtype: 'chesspuzzles-grid-tests',
                     cls: 'main-wrapper',
                 }]
             }]

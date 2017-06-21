@@ -1,7 +1,7 @@
-ChessPuzzles.grid.Items = function (config) {
+ChessPuzzles.grid.Tests = function (config) {
     config = config || {};
     if (!config.id) {
-        config.id = 'chesspuzzles-grid-items';
+        config.id = 'chesspuzzles-grid-tests';
     }
     Ext.applyIf(config, {
         url: ChessPuzzles.config.connector_url,
@@ -10,12 +10,12 @@ ChessPuzzles.grid.Items = function (config) {
         tbar: this.getTopBar(config),
         sm: new Ext.grid.CheckboxSelectionModel(),
         baseParams: {
-            action: 'mgr/item/getlist'
+            action: 'mgr/test/getlist'
         },
         listeners: {
             rowDblClick: function (grid, rowIndex, e) {
                 var row = grid.store.getAt(rowIndex);
-                this.updateItem(grid, e, row);
+                this.updateTest(grid, e, row);
             }
         },
         viewConfig: {
@@ -34,7 +34,7 @@ ChessPuzzles.grid.Items = function (config) {
         remoteSort: true,
         autoHeight: true,
     });
-    ChessPuzzles.grid.Items.superclass.constructor.call(this, config);
+    ChessPuzzles.grid.Tests.superclass.constructor.call(this, config);
 
     // Clear selection on grid refresh
     this.store.on('load', function () {
@@ -43,7 +43,7 @@ ChessPuzzles.grid.Items = function (config) {
         }
     }, this);
 };
-Ext.extend(ChessPuzzles.grid.Items, MODx.grid.Grid, {
+Ext.extend(ChessPuzzles.grid.Tests, MODx.grid.Grid, {
     windows: {},
 
     getMenu: function (grid, rowIndex) {
@@ -52,12 +52,12 @@ Ext.extend(ChessPuzzles.grid.Items, MODx.grid.Grid, {
         var row = grid.getStore().getAt(rowIndex);
         var menu = ChessPuzzles.utils.getMenu(row.data['actions'], this, ids);
 
-        this.addContextMenuItem(menu);
+        this.addContextMenuTest(menu);
     },
 
-    createItem: function (btn, e) {
+    createTest: function (btn, e) {
         var w = MODx.load({
-            xtype: 'chesspuzzles-item-window-create',
+            xtype: 'chesspuzzles-test-window-create',
             id: Ext.id(),
             listeners: {
                 success: {
@@ -72,7 +72,7 @@ Ext.extend(ChessPuzzles.grid.Items, MODx.grid.Grid, {
         w.show(e.target);
     },
 
-    updateItem: function (btn, e, row) {
+    updateTest: function (btn, e, row) {
         if (typeof(row) != 'undefined') {
             this.menu.record = row.data;
         }
@@ -84,14 +84,14 @@ Ext.extend(ChessPuzzles.grid.Items, MODx.grid.Grid, {
         MODx.Ajax.request({
             url: this.config.url,
             params: {
-                action: 'mgr/item/get',
+                action: 'mgr/test/get',
                 id: id
             },
             listeners: {
                 success: {
                     fn: function (r) {
                         var w = MODx.load({
-                            xtype: 'chesspuzzles-item-window-update',
+                            xtype: 'chesspuzzles-test-window-update',
                             id: Ext.id(),
                             record: r,
                             listeners: {
@@ -111,21 +111,21 @@ Ext.extend(ChessPuzzles.grid.Items, MODx.grid.Grid, {
         });
     },
 
-    removeItem: function () {
+    removeTest: function () {
         var ids = this._getSelectedIds();
         if (!ids.length) {
             return false;
         }
         MODx.msg.confirm({
             title: ids.length > 1
-                ? _('chesspuzzles_items_remove')
-                : _('chesspuzzles_item_remove'),
+                ? _('chesspuzzles_tests_remove')
+                : _('chesspuzzles_test_remove'),
             text: ids.length > 1
-                ? _('chesspuzzles_items_remove_confirm')
-                : _('chesspuzzles_item_remove_confirm'),
+                ? _('chesspuzzles_tests_remove_confirm')
+                : _('chesspuzzles_test_remove_confirm'),
             url: this.config.url,
             params: {
-                action: 'mgr/item/remove',
+                action: 'mgr/test/remove',
                 ids: Ext.util.JSON.encode(ids),
             },
             listeners: {
@@ -139,7 +139,7 @@ Ext.extend(ChessPuzzles.grid.Items, MODx.grid.Grid, {
         return true;
     },
 
-    disableItem: function () {
+    disableTest: function () {
         var ids = this._getSelectedIds();
         if (!ids.length) {
             return false;
@@ -147,7 +147,7 @@ Ext.extend(ChessPuzzles.grid.Items, MODx.grid.Grid, {
         MODx.Ajax.request({
             url: this.config.url,
             params: {
-                action: 'mgr/item/disable',
+                action: 'mgr/test/disable',
                 ids: Ext.util.JSON.encode(ids),
             },
             listeners: {
@@ -160,7 +160,7 @@ Ext.extend(ChessPuzzles.grid.Items, MODx.grid.Grid, {
         })
     },
 
-    enableItem: function () {
+    enableTest: function () {
         var ids = this._getSelectedIds();
         if (!ids.length) {
             return false;
@@ -168,7 +168,7 @@ Ext.extend(ChessPuzzles.grid.Items, MODx.grid.Grid, {
         MODx.Ajax.request({
             url: this.config.url,
             params: {
-                action: 'mgr/item/enable',
+                action: 'mgr/test/enable',
                 ids: Ext.util.JSON.encode(ids),
             },
             listeners: {
@@ -182,27 +182,27 @@ Ext.extend(ChessPuzzles.grid.Items, MODx.grid.Grid, {
     },
 
     getFields: function () {
-        return ['id', 'name', 'description', 'active', 'actions'];
+        return ['id', 'title', 'description', 'active', 'actions'];
     },
 
     getColumns: function () {
         return [{
-            header: _('chesspuzzles_item_id'),
+            header: _('chesspuzzles_test_id'),
             dataIndex: 'id',
             sortable: true,
             width: 70
         }, {
-            header: _('chesspuzzles_item_name'),
-            dataIndex: 'name',
+            header: _('chesspuzzles_test_name'),
+            dataIndex: 'title',
             sortable: true,
             width: 200,
         }, {
-            header: _('chesspuzzles_item_description'),
+            header: _('chesspuzzles_test_description'),
             dataIndex: 'description',
             sortable: false,
             width: 250,
         }, {
-            header: _('chesspuzzles_item_active'),
+            header: _('chesspuzzles_test_active'),
             dataIndex: 'active',
             renderer: ChessPuzzles.utils.renderBoolean,
             sortable: true,
@@ -219,8 +219,8 @@ Ext.extend(ChessPuzzles.grid.Items, MODx.grid.Grid, {
 
     getTopBar: function () {
         return [{
-            text: '<i class="icon icon-plus"></i>&nbsp;' + _('chesspuzzles_item_create'),
-            handler: this.createItem,
+            text: '<i class="icon icon-plus"></i>&nbsp;' + _('chesspuzzles_test_create'),
+            handler: this.createTest,
             scope: this
         }, '->', {
             xtype: 'chesspuzzles-field-search',
@@ -284,4 +284,4 @@ Ext.extend(ChessPuzzles.grid.Items, MODx.grid.Grid, {
         this.getBottomToolbar().changePage(1);
     },
 });
-Ext.reg('chesspuzzles-grid-items', ChessPuzzles.grid.Items);
+Ext.reg('chesspuzzles-grid-tests', ChessPuzzles.grid.Tests);
