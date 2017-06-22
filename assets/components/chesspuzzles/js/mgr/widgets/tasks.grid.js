@@ -24,13 +24,11 @@ ChessPuzzles.grid.Tasks = function (config) {
             autoFill: true,
             showPreview: true,
             scrollOffset: 0,
-            /*
              getRowClass: function (rec) {
              return !rec.data.active
              ? 'chesspuzzles-grid-row-disabled'
              : '';
              }
-             */
         },
         paging: true,
         remoteSort: true,
@@ -184,7 +182,7 @@ Ext.extend(ChessPuzzles.grid.Tasks, MODx.grid.Grid, {
     },
 
     getFields: function () {
-        return ['id', 'title', 'description', 'actions'];
+        return ['id', 'title', 'description', 'ball_succ', 'ball_err', 'position_start', 'result', 'active', 'level_id', 'lesson_id', 'actions'];
     },
 
     getColumns: function () {
@@ -192,12 +190,39 @@ Ext.extend(ChessPuzzles.grid.Tasks, MODx.grid.Grid, {
             header: _('chesspuzzles_task_name'),
             dataIndex: 'title',
             sortable: true,
-            width: 200,
+            width: 300,
         }, {
-            header: _('chesspuzzles_task_description'),
-            dataIndex: 'description',
+            header: _('chesspuzzles_task_position_start'),
+            dataIndex: 'position_start',
             sortable: false,
-            width: 250,
+            width: 150,
+        }, {
+            header: _('chesspuzzles_task_ball_succ'),
+            dataIndex: 'ball_succ',
+            sortable: true,
+            width: 170,
+        }, {
+            header: _('chesspuzzles_task_ball_err'),
+            dataIndex: 'ball_err',
+            sortable: true,
+            width: 150,
+        }, {
+            header: _('chesspuzzles_task_result'),
+            dataIndex: 'result',
+            sortable: false,
+            width: 150,
+        }, {
+            header: _('chesspuzzles_task_level_id'),
+            dataIndex: 'level_id',
+            renderer: this._renderLevel,
+            sortable: true,
+            width: 90,
+        }, {
+            header: _('chesspuzzles_task_active'),
+            dataIndex: 'active',
+            renderer: ChessPuzzles.utils.renderBoolean,
+            sortable: true,
+            width: 90,
         }, {
             header: _('chesspuzzles_grid_actions'),
             dataIndex: 'actions',
@@ -274,5 +299,14 @@ Ext.extend(ChessPuzzles.grid.Tasks, MODx.grid.Grid, {
         this.getStore().baseParams.query = '';
         this.getBottomToolbar().changePage(1);
     },
+
+    _renderLevel: function(val,cell,row) {
+        if (!val) {return '';}
+        else if (row['data']['title']) {
+            val = '<sup>(' + val + ')</sup> ' +  row;
+        }
+        console.log('Item: ', row);
+        return val;
+    }
 });
 Ext.reg('chesspuzzles-grid-tasks', ChessPuzzles.grid.Tasks);

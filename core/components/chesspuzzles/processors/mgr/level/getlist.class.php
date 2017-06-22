@@ -4,8 +4,8 @@ class ChessPuzzlesLevelGetListProcessor extends modObjectGetListProcessor
 {
     public $objectType = 'ChessPuzzlesLevel';
     public $classKey = 'ChessPuzzlesLevel';
-    public $defaultSortField = 'id';
-    public $defaultSortDirection = 'DESC';
+    public $defaultSortField = 'title';
+    public $defaultSortDirection = 'ASC';
     //public $permission = 'list';
 
 
@@ -58,8 +58,8 @@ class ChessPuzzlesLevelGetListProcessor extends modObjectGetListProcessor
         $array['actions'][] = array(
             'cls' => '',
             'icon' => 'icon icon-edit',
-            'title' => $this->modx->lexicon('chesspuzzles_item_update'),
-            //'multiple' => $this->modx->lexicon('chesspuzzles_items_update'),
+            'title' => $this->modx->lexicon('chesspuzzles_level_update'),
+            //'multiple' => $this->modx->lexicon('chesspuzzles_levels_update'),
             'action' => 'updateLevel',
             'button' => true,
             'menu' => true,
@@ -69,8 +69,8 @@ class ChessPuzzlesLevelGetListProcessor extends modObjectGetListProcessor
             $array['actions'][] = array(
                 'cls' => '',
                 'icon' => 'icon icon-power-off action-green',
-                'title' => $this->modx->lexicon('chesspuzzles_item_enable'),
-                'multiple' => $this->modx->lexicon('chesspuzzles_items_enable'),
+                'title' => $this->modx->lexicon('chesspuzzles_level_enable'),
+                'multiple' => $this->modx->lexicon('chesspuzzles_levels_enable'),
                 'action' => 'enableLevel',
                 'button' => true,
                 'menu' => true,
@@ -79,8 +79,8 @@ class ChessPuzzlesLevelGetListProcessor extends modObjectGetListProcessor
             $array['actions'][] = array(
                 'cls' => '',
                 'icon' => 'icon icon-power-off action-gray',
-                'title' => $this->modx->lexicon('chesspuzzles_item_disable'),
-                'multiple' => $this->modx->lexicon('chesspuzzles_items_disable'),
+                'title' => $this->modx->lexicon('chesspuzzles_level_disable'),
+                'multiple' => $this->modx->lexicon('chesspuzzles_levels_disable'),
                 'action' => 'disableLevel',
                 'button' => true,
                 'menu' => true,
@@ -91,8 +91,8 @@ class ChessPuzzlesLevelGetListProcessor extends modObjectGetListProcessor
         $array['actions'][] = array(
             'cls' => '',
             'icon' => 'icon icon-trash-o action-red',
-            'title' => $this->modx->lexicon('chesspuzzles_item_remove'),
-            'multiple' => $this->modx->lexicon('chesspuzzles_items_remove'),
+            'title' => $this->modx->lexicon('chesspuzzles_level_remove'),
+            'multiple' => $this->modx->lexicon('chesspuzzles_levels_remove'),
             'action' => 'removeLevel',
             'button' => true,
             'menu' => true,

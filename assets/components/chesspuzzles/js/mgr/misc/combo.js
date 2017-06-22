@@ -46,3 +46,25 @@ Ext.extend(ChessPuzzles.combo.Search, Ext.form.TwinTriggerField, {
 });
 Ext.reg('chesspuzzles-combo-search', ChessPuzzles.combo.Search);
 Ext.reg('chesspuzzles-field-search', ChessPuzzles.combo.Search);
+
+
+ChessPuzzles.combo.Level = function (config) {
+    config = config || {};
+    Ext.applyIf(config, {
+        name: 'level',
+        hiddenName: config.name || 'level',
+        displayField: 'title',
+        valueField: 'id',
+        fields: ['id', 'title'],
+        pageSize: 20,
+        hideMode: 'offsets',
+        emptyText: _('chesspuzzles_level_select_empty_text'),
+        url: ChessPuzzles.config['connector_url'],
+        baseParams: {
+            action: 'mgr/level/getlist',
+        }
+    });
+    ChessPuzzles.combo.Level.superclass.constructor.call(this, config);
+};
+Ext.extend(ChessPuzzles.combo.Level, MODx.combo.ComboBox);
+Ext.reg('chesspuzzles-combo-level', ChessPuzzles.combo.Level);

@@ -19,13 +19,13 @@ class ChessPuzzlesTaskRemoveProcessor extends modObjectProcessor
 
         $ids = $this->modx->fromJSON($this->getProperty('ids'));
         if (empty($ids)) {
-            return $this->failure($this->modx->lexicon('chesspuzzles_item_err_ns'));
+            return $this->failure($this->modx->lexicon('chesspuzzles_task_err_ns'));
         }
 
         foreach ($ids as $id) {
             /** @var ChessPuzzlesTask $object */
             if (!$object = $this->modx->getObject($this->classKey, $id)) {
-                return $this->failure($this->modx->lexicon('chesspuzzles_item_err_nf'));
+                return $this->failure($this->modx->lexicon('chesspuzzles_task_err_nf'));
             }
 
             $object->remove();

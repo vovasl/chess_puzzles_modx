@@ -13,13 +13,12 @@ class ChessPuzzlesTaskCreateProcessor extends modObjectCreateProcessor
      */
     public function beforeSet()
     {
+        /*
         $name = trim($this->getProperty('title'));
-        if (empty($name)) {
-            $this->modx->error->addField('name', $this->modx->lexicon('chesspuzzles_item_err_name'));
-        } elseif ($this->modx->getCount($this->classKey, array('name' => $name))) {
-            $this->modx->error->addField('name', $this->modx->lexicon('chesspuzzles_item_err_ae'));
+        if ($this->modx->getCount($this->classKey, array('title' => $name))) {
+            $this->modx->error->addField('title', $this->modx->lexicon('chesspuzzles_task_err_ae'));
         }
-
+        */
         return parent::beforeSet();
     }
 

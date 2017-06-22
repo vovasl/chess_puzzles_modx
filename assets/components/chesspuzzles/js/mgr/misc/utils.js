@@ -4,6 +4,10 @@ ChessPuzzles.utils.renderBoolean = function (value) {
         : String.format('<span class="red">{0}</span>', _('no'));
 };
 
+ChessPuzzles.utils.renderLevel = function (value, title) {
+    return title;
+};
+
 ChessPuzzles.utils.getMenu = function (actions, grid, selected) {
     var menu = [];
     var cls, icon, title, action;

@@ -29,12 +29,44 @@ Ext.extend(ChessPuzzles.window.CreateTask, MODx.Window, {
             anchor: '99%',
             allowBlank: false
         }, {
+            xtype: 'textfield',
+            fieldLabel: _('chesspuzzles_task_position_start'),
+            name: 'position_start',
+            id: config.id + '-position_start',
+            anchor: '99%',
+            allowBlank: false
+        }, {
+            xtype: 'numberfield',
+            fieldLabel: _('chesspuzzles_task_ball_succ'),
+            name: 'ball_succ',
+            id: config.id + '-ball_succ',
+            allowBlank: false
+        }, {
+            xtype: 'numberfield',
+            fieldLabel: _('chesspuzzles_task_ball_err'),
+            name: 'ball_err',
+            id: config.id + '-ball_err',
+            allowBlank: false
+        }, {
             xtype: 'textarea',
-            fieldLabel: _('chesspuzzles_task_description'),
-            name: 'description',
-            id: config.id + '-description',
+            fieldLabel: _('chesspuzzles_task_result'),
+            name: 'result',
+            id: config.id + '-result',
             height: 150,
             anchor: '99%'
+        }, {
+            xtype: 'chesspuzzles-combo-level',
+            fieldLabel: _('chesspuzzles_task_level_id'),
+            name: 'level_id',
+            id: config.id + '-level_id',
+            anchor: '99%',
+            allowBlank: false
+        }, {
+            xtype: 'xcheckbox',
+            boxLabel: _('chesspuzzles_task_active'),
+            name: 'active',
+            id: config.id + '-active',
+            checked: true
         }];
     },
 
@@ -78,14 +110,46 @@ Ext.extend(ChessPuzzles.window.UpdateTask, MODx.Window, {
             name: 'title',
             id: config.id + '-title',
             anchor: '99%',
-            allowBlank: false,
+            allowBlank: false
+        }, {
+            xtype: 'textfield',
+            fieldLabel: _('chesspuzzles_task_position_start'),
+            name: 'position_start',
+            id: config.id + '-position_start',
+            anchor: '99%',
+            allowBlank: false
+        }, {
+            xtype: 'numberfield',
+            fieldLabel: _('chesspuzzles_task_ball_succ'),
+            name: 'ball_succ',
+            id: config.id + '-ball_succ',
+            allowBlank: false
+        }, {
+            xtype: 'numberfield',
+            fieldLabel: _('chesspuzzles_task_ball_err'),
+            name: 'ball_err',
+            id: config.id + '-ball_err',
+            allowBlank: false
         }, {
             xtype: 'textarea',
-            fieldLabel: _('chesspuzzles_task_description'),
-            name: 'description',
-            id: config.id + '-description',
-            anchor: '99%',
+            fieldLabel: _('chesspuzzles_task_result'),
+            name: 'result',
+            id: config.id + '-result',
             height: 150,
+            anchor: '99%'
+        }, {
+            xtype: 'chesspuzzles-combo-level',
+            fieldLabel: _('chesspuzzles_task_level_id'),
+            name: 'level_id',
+            id: config.id + '-level_id',
+            anchor: '99%',
+            allowBlank: false
+        }, {
+            xtype: 'xcheckbox',
+            boxLabel: _('chesspuzzles_task_active'),
+            name: 'active',
+            id: config.id + '-active',
+            checked: true
         }];
     },
 
