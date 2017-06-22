@@ -53,9 +53,9 @@ ChessPuzzles.combo.Level = function (config) {
     Ext.applyIf(config, {
         name: 'level',
         hiddenName: config.name || 'level',
-        displayField: 'title',
+        displayField: 'levelname',
         valueField: 'id',
-        fields: ['id', 'title'],
+        fields: ['id', 'levelname'],
         pageSize: 20,
         hideMode: 'offsets',
         emptyText: _('chesspuzzles_level_select_empty_text'),

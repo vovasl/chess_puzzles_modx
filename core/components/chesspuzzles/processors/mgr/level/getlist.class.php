@@ -4,7 +4,7 @@ class ChessPuzzlesLevelGetListProcessor extends modObjectGetListProcessor
 {
     public $objectType = 'ChessPuzzlesLevel';
     public $classKey = 'ChessPuzzlesLevel';
-    public $defaultSortField = 'title';
+    public $defaultSortField = 'levelname';
     public $defaultSortDirection = 'ASC';
     //public $permission = 'list';
 

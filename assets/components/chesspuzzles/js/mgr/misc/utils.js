@@ -4,9 +4,13 @@ ChessPuzzles.utils.renderBoolean = function (value) {
         : String.format('<span class="red">{0}</span>', _('no'));
 };
 
-ChessPuzzles.utils.renderLevel = function (value, title) {
-    return title;
-};
+ChessPuzzles.utils.renderLevel = function(val,cell,row) {
+    if (!val) {return '';}
+    else if (row['data']['levelname']) {
+        val = row['data']['levelname']
+    }
+    return val;
+}
 
 ChessPuzzles.utils.getMenu = function (actions, grid, selected) {
     var menu = [];

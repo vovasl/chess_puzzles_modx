@@ -182,7 +182,7 @@ Ext.extend(ChessPuzzles.grid.Tasks, MODx.grid.Grid, {
     },
 
     getFields: function () {
-        return ['id', 'title', 'description', 'ball_succ', 'ball_err', 'position_start', 'result', 'active', 'level_id', 'lesson_id', 'actions'];
+        return ['id', 'title', 'description', 'ball_succ', 'ball_err', 'position_start', 'result', 'active', 'level_id', 'levelname', 'lesson_id', 'actions'];
     },
 
     getColumns: function () {
@@ -214,7 +214,7 @@ Ext.extend(ChessPuzzles.grid.Tasks, MODx.grid.Grid, {
         }, {
             header: _('chesspuzzles_task_level_id'),
             dataIndex: 'level_id',
-            renderer: this._renderLevel,
+            renderer: ChessPuzzles.utils.renderLevel,
             sortable: true,
             width: 90,
         }, {
@@ -300,13 +300,5 @@ Ext.extend(ChessPuzzles.grid.Tasks, MODx.grid.Grid, {
         this.getBottomToolbar().changePage(1);
     },
 
-    _renderLevel: function(val,cell,row) {
-        if (!val) {return '';}
-        else if (row['data']['title']) {
-            val = '<sup>(' + val + ')</sup> ' +  row;
-        }
-        console.log('Item: ', row);
-        return val;
-    }
 });
 Ext.reg('chesspuzzles-grid-tasks', ChessPuzzles.grid.Tasks);

@@ -32,6 +32,9 @@ class ChessPuzzlesTestGetListProcessor extends modObjectGetListProcessor
      */
     public function prepareQueryBeforeCount(xPDOQuery $c)
     {
+        $c->leftJoin('ChessPuzzlesLevel', 'Level');
+        $c->select($this->modx->getSelectColumns($this->classKey, $this->classKey));
+        $c->select($this->modx->getSelectColumns('ChessPuzzlesLevel', 'Level', '', array('levelname')));
         $query = trim($this->getProperty('query'));
         if ($query) {
             $c->where(array(

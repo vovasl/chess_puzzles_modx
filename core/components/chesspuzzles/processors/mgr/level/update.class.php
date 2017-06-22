@@ -30,13 +30,13 @@ class ChessPuzzlesLevelUpdateProcessor extends modObjectUpdateProcessor
     public function beforeSet()
     {
         $id = (int)$this->getProperty('id');
-        $name = trim($this->getProperty('title'));
+        $name = trim($this->getProperty('levelname'));
         if (empty($id)) {
             return $this->modx->lexicon('chesspuzzles_level_err_ns');
         }
 
-        if ($this->modx->getCount($this->classKey, array('title' => $name, 'id:!=' => $id))) {
-            $this->modx->error->addField('title', $this->modx->lexicon('chesspuzzles_level_err_ae'));
+        if ($this->modx->getCount($this->classKey, array('levelname' => $name, 'id:!=' => $id))) {
+            $this->modx->error->addField('levelname', $this->modx->lexicon('chesspuzzles_level_err_ae'));
         }
 
         return parent::beforeSet();

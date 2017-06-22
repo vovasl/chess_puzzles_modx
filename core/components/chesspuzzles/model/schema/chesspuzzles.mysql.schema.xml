@@ -3,10 +3,10 @@
        version="1.1">
 
     <object class="ChessPuzzlesLevel" table="chesspuzzles_level" extends="xPDOSimpleObject">
-        <field key="title" dbtype="varchar" precision="255" phptype="string" null="false" default=""/>
+        <field key="levelname" dbtype="varchar" precision="255" phptype="string" null="false" default=""/>
         <field key="description" dbtype="text" phptype="string" null="true"/>
-        <index alias="title" name="title" primary="false" unique="false" type="BTREE">
-            <column key="title" length="" collation="A" null="false" />
+        <index alias="levelname" name="levelname" primary="false" unique="false" type="BTREE">
+            <column key="levelname" length="" collation="A" null="false" />
         </index>
         <composite alias="Task" class="ChessPuzzlesTask" local="id" foreign="level_id" cardinality="many" owner="local" />
         <composite alias="Test" class="ChessPuzzlesTest" local="id" foreign="level_id" cardinality="many" owner="local" />
@@ -18,7 +18,7 @@
         <field key="ball_succ" dbtype="int" precision="3" phptype="integer" attributes="unsigned" null="false" default="" />
         <field key="ball_err" dbtype="int" precision="3" phptype="integer" attributes="unsigned" null="false" default="" />
         <field key="position_start" dbtype="varchar" precision="255" phptype="string" null="false" default=""/>
-        <field key="result" dbtype="text" phptype="json" null="true"/>
+        <field key="result" dbtype="text" phptype="string" null="true"/>
         <field key="active" dbtype="tinyint" precision="1" phptype="boolean" null="false" default="1"/>
         <field key="level_id" dbtype="int" precision="10" phptype="integer" attributes="unsigned" null="true" />
         <field key="lesson_id" dbtype="int" precision="10" phptype="integer" attributes="unsigned" null="true" />
@@ -50,7 +50,7 @@
         <field key="ball_succ" dbtype="int" precision="3" phptype="integer" attributes="unsigned" null="false" default="" />
         <field key="ball_err" dbtype="int" precision="3" phptype="integer" attributes="unsigned" null="false" default="" />
         <field key="position_start" dbtype="varchar" precision="255" phptype="string" null="false" default=""/>
-        <field key="result" dbtype="text" phptype="json" null="true"/>
+        <field key="result" dbtype="text" phptype="string" null="true"/>
         <field key="active" dbtype="tinyint" precision="1" phptype="boolean" null="false" default="1"/>
         <field key="level_id" dbtype="int" precision="10" phptype="integer" attributes="unsigned" null="true" />
         <field key="lesson_id" dbtype="int" precision="10" phptype="integer" attributes="unsigned" null="true" />

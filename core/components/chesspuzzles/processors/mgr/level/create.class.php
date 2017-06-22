@@ -13,9 +13,9 @@ class ChessPuzzlesLevelCreateProcessor extends modObjectCreateProcessor
      */
     public function beforeSet()
     {
-        $name = trim($this->getProperty('title'));
-        if ($this->modx->getCount($this->classKey, array('title' => $name))) {
-            $this->modx->error->addField('title', $this->modx->lexicon('chesspuzzles_level_err_ae'));
+        $name = trim($this->getProperty('levelname'));
+        if ($this->modx->getCount($this->classKey, array('levelname' => $name))) {
+            $this->modx->error->addField('levelname', $this->modx->lexicon('chesspuzzles_level_err_ae'));
         }
 
         return parent::beforeSet();

@@ -24,8 +24,8 @@ Ext.extend(ChessPuzzles.window.CreateLevel, MODx.Window, {
         return [{
             xtype: 'textfield',
             fieldLabel: _('chesspuzzles_level_name'),
-            name: 'title',
-            id: config.id + '-title',
+            name: 'levelname',
+            id: config.id + '-levelname',
             anchor: '99%',
             allowBlank: false
         }, {
@@ -75,8 +75,8 @@ Ext.extend(ChessPuzzles.window.UpdateLevel, MODx.Window, {
         }, {
             xtype: 'textfield',
             fieldLabel: _('chesspuzzles_level_name'),
-            name: 'title',
-            id: config.id + '-title',
+            name: 'levelname',
+            id: config.id + '-levelname',
             anchor: '99%',
             allowBlank: false,
         }, {

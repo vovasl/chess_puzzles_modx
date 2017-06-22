@@ -184,13 +184,13 @@ Ext.extend(ChessPuzzles.grid.Levels, MODx.grid.Grid, {
     },
 
     getFields: function () {
-        return ['id', 'title', 'description', 'actions'];
+        return ['id', 'levelname', 'description', 'actions'];
     },
 
     getColumns: function () {
         return [{
             header: _('chesspuzzles_level_name'),
-            dataIndex: 'title',
+            dataIndex: 'levelname',
             sortable: true,
             width: 200,
         }, {
