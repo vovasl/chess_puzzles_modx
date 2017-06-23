@@ -182,31 +182,47 @@ Ext.extend(ChessPuzzles.grid.Tests, MODx.grid.Grid, {
     },
 
     getFields: function () {
-        return ['id', 'title', 'description', 'active', 'actions'];
+        return ['id', 'title', 'description', 'ball_succ', 'ball_err', 'position_start', 'result', 'active', 'level_id', 'levelname', 'lesson_id', 'actions'];
     },
 
     getColumns: function () {
         return [{
-            header: _('chesspuzzles_test_id'),
-            dataIndex: 'id',
-            sortable: true,
-            width: 70
-        }, {
             header: _('chesspuzzles_test_name'),
             dataIndex: 'title',
             sortable: true,
+            width: 250,
+        }, {
+            header: _('chesspuzzles_test_position_start'),
+            dataIndex: 'position_start',
+            sortable: false,
             width: 200,
         }, {
-            header: _('chesspuzzles_test_description'),
-            dataIndex: 'description',
+            header: _('chesspuzzles_test_ball_succ'),
+            dataIndex: 'ball_succ',
+            sortable: true,
+            width: 145,
+        }, {
+            header: _('chesspuzzles_test_ball_err'),
+            dataIndex: 'ball_err',
+            sortable: true,
+            width: 125,
+        }, {
+            header: _('chesspuzzles_test_result'),
+            dataIndex: 'result',
             sortable: false,
-            width: 250,
+            width: 150,
+        }, {
+            header: _('chesspuzzles_test_level_id'),
+            dataIndex: 'level_id',
+            renderer: ChessPuzzles.utils.renderLevel,
+            sortable: true,
+            width: 100,
         }, {
             header: _('chesspuzzles_test_active'),
             dataIndex: 'active',
             renderer: ChessPuzzles.utils.renderBoolean,
             sortable: true,
-            width: 100,
+            width: 90,
         }, {
             header: _('chesspuzzles_grid_actions'),
             dataIndex: 'actions',
@@ -283,5 +299,6 @@ Ext.extend(ChessPuzzles.grid.Tests, MODx.grid.Grid, {
         this.getStore().baseParams.query = '';
         this.getBottomToolbar().changePage(1);
     },
+
 });
 Ext.reg('chesspuzzles-grid-tests', ChessPuzzles.grid.Tests);

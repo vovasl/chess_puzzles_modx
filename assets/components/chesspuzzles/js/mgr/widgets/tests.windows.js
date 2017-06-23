@@ -27,20 +27,46 @@ Ext.extend(ChessPuzzles.window.CreateTest, MODx.Window, {
             name: 'title',
             id: config.id + '-title',
             anchor: '99%',
-            allowBlank: false,
+            allowBlank: false
+        }, {
+            xtype: 'textfield',
+            fieldLabel: _('chesspuzzles_test_position_start'),
+            name: 'position_start',
+            id: config.id + '-position_start',
+            anchor: '99%',
+            allowBlank: false
+        }, {
+            xtype: 'numberfield',
+            fieldLabel: _('chesspuzzles_test_ball_succ'),
+            name: 'ball_succ',
+            id: config.id + '-ball_succ',
+            allowBlank: false
+        }, {
+            xtype: 'numberfield',
+            fieldLabel: _('chesspuzzles_test_ball_err'),
+            name: 'ball_err',
+            id: config.id + '-ball_err',
+            allowBlank: false
         }, {
             xtype: 'textarea',
-            fieldLabel: _('chesspuzzles_test_description'),
-            name: 'description',
-            id: config.id + '-description',
+            fieldLabel: _('chesspuzzles_test_result'),
+            name: 'result',
+            id: config.id + '-result',
             height: 150,
             anchor: '99%'
+        }, {
+            xtype: 'chesspuzzles-combo-level',
+            fieldLabel: _('chesspuzzles_test_level_id'),
+            name: 'level_id',
+            id: config.id + '-level_id',
+            anchor: '99%',
+            allowBlank: false
         }, {
             xtype: 'xcheckbox',
             boxLabel: _('chesspuzzles_test_active'),
             name: 'active',
             id: config.id + '-active',
-            checked: true,
+            checked: true
         }];
     },
 
@@ -84,19 +110,46 @@ Ext.extend(ChessPuzzles.window.UpdateTest, MODx.Window, {
             name: 'title',
             id: config.id + '-title',
             anchor: '99%',
-            allowBlank: false,
+            allowBlank: false
+        }, {
+            xtype: 'textfield',
+            fieldLabel: _('chesspuzzles_test_position_start'),
+            name: 'position_start',
+            id: config.id + '-position_start',
+            anchor: '99%',
+            allowBlank: false
+        }, {
+            xtype: 'numberfield',
+            fieldLabel: _('chesspuzzles_test_ball_succ'),
+            name: 'ball_succ',
+            id: config.id + '-ball_succ',
+            allowBlank: false
+        }, {
+            xtype: 'numberfield',
+            fieldLabel: _('chesspuzzles_test_ball_err'),
+            name: 'ball_err',
+            id: config.id + '-ball_err',
+            allowBlank: false
         }, {
             xtype: 'textarea',
-            fieldLabel: _('chesspuzzles_test_description'),
-            name: 'description',
-            id: config.id + '-description',
-            anchor: '99%',
+            fieldLabel: _('chesspuzzles_test_result'),
+            name: 'result',
+            id: config.id + '-result',
             height: 150,
+            anchor: '99%'
+        }, {
+            xtype: 'chesspuzzles-combo-level',
+            fieldLabel: _('chesspuzzles_test_level_id'),
+            name: 'level_id',
+            id: config.id + '-level_id',
+            anchor: '99%',
+            allowBlank: false
         }, {
             xtype: 'xcheckbox',
             boxLabel: _('chesspuzzles_test_active'),
             name: 'active',
             id: config.id + '-active',
+            checked: true
         }];
     },
 

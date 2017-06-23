@@ -190,22 +190,22 @@ Ext.extend(ChessPuzzles.grid.Tasks, MODx.grid.Grid, {
             header: _('chesspuzzles_task_name'),
             dataIndex: 'title',
             sortable: true,
-            width: 300,
+            width: 250,
         }, {
             header: _('chesspuzzles_task_position_start'),
             dataIndex: 'position_start',
             sortable: false,
-            width: 150,
+            width: 200,
         }, {
             header: _('chesspuzzles_task_ball_succ'),
             dataIndex: 'ball_succ',
             sortable: true,
-            width: 170,
+            width: 145,
         }, {
             header: _('chesspuzzles_task_ball_err'),
             dataIndex: 'ball_err',
             sortable: true,
-            width: 150,
+            width: 125,
         }, {
             header: _('chesspuzzles_task_result'),
             dataIndex: 'result',
@@ -216,7 +216,7 @@ Ext.extend(ChessPuzzles.grid.Tasks, MODx.grid.Grid, {
             dataIndex: 'level_id',
             renderer: ChessPuzzles.utils.renderLevel,
             sortable: true,
-            width: 90,
+            width: 100,
         }, {
             header: _('chesspuzzles_task_active'),
             dataIndex: 'active',
