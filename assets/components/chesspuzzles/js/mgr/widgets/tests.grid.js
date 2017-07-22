@@ -10,7 +10,9 @@ ChessPuzzles.grid.Tests = function (config) {
         tbar: this.getTopBar(config),
         sm: new Ext.grid.CheckboxSelectionModel(),
         baseParams: {
-            action: 'mgr/test/getlist'
+            action: 'mgr/test/getlist',
+            sort: 'id',
+            dir: 'asc'
         },
         listeners: {
             rowDblClick: function (grid, rowIndex, e) {
@@ -187,6 +189,11 @@ Ext.extend(ChessPuzzles.grid.Tests, MODx.grid.Grid, {
 
     getColumns: function () {
         return [{
+            header: _('chesspuzzles_test_id'),
+            dataIndex: 'id',
+            sortable: true,
+            width: 50,
+        },{
             header: _('chesspuzzles_test_name'),
             dataIndex: 'title',
             sortable: true,
@@ -196,7 +203,8 @@ Ext.extend(ChessPuzzles.grid.Tests, MODx.grid.Grid, {
             dataIndex: 'position_start',
             sortable: false,
             width: 200,
-        }, {
+        }
+        , {
             header: _('chesspuzzles_test_ball_succ'),
             dataIndex: 'ball_succ',
             sortable: true,
@@ -206,7 +214,8 @@ Ext.extend(ChessPuzzles.grid.Tests, MODx.grid.Grid, {
             dataIndex: 'ball_err',
             sortable: true,
             width: 125,
-        }, {
+        }
+        , {
             header: _('chesspuzzles_test_result'),
             dataIndex: 'result',
             sortable: false,

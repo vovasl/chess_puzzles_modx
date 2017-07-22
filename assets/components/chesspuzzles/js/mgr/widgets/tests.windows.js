@@ -35,7 +35,8 @@ Ext.extend(ChessPuzzles.window.CreateTest, MODx.Window, {
             id: config.id + '-position_start',
             anchor: '99%',
             allowBlank: false
-        }, {
+        }
+        , {
             xtype: 'numberfield',
             fieldLabel: _('chesspuzzles_test_ball_succ'),
             name: 'ball_succ',
@@ -47,13 +48,15 @@ Ext.extend(ChessPuzzles.window.CreateTest, MODx.Window, {
             name: 'ball_err',
             id: config.id + '-ball_err',
             allowBlank: false
-        }, {
+        }
+        , {
             xtype: 'textarea',
             fieldLabel: _('chesspuzzles_test_result'),
             name: 'result',
             id: config.id + '-result',
             height: 150,
-            anchor: '99%'
+            anchor: '99%',
+            allowBlank: false
         }, {
             xtype: 'chesspuzzles-combo-level',
             fieldLabel: _('chesspuzzles_test_level_id'),
@@ -118,7 +121,8 @@ Ext.extend(ChessPuzzles.window.UpdateTest, MODx.Window, {
             id: config.id + '-position_start',
             anchor: '99%',
             allowBlank: false
-        }, {
+        }
+        , {
             xtype: 'numberfield',
             fieldLabel: _('chesspuzzles_test_ball_succ'),
             name: 'ball_succ',
@@ -130,13 +134,15 @@ Ext.extend(ChessPuzzles.window.UpdateTest, MODx.Window, {
             name: 'ball_err',
             id: config.id + '-ball_err',
             allowBlank: false
-        }, {
+        }
+        , {
             xtype: 'textarea',
             fieldLabel: _('chesspuzzles_test_result'),
             name: 'result',
             id: config.id + '-result',
             height: 150,
-            anchor: '99%'
+            anchor: '99%',
+            allowBlank: false
         }, {
             xtype: 'chesspuzzles-combo-level',
             fieldLabel: _('chesspuzzles_test_level_id'),

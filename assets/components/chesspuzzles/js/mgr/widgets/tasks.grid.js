@@ -10,7 +10,9 @@ ChessPuzzles.grid.Tasks = function (config) {
         tbar: this.getTopBar(config),
         sm: new Ext.grid.CheckboxSelectionModel(),
         baseParams: {
-            action: 'mgr/task/getlist'
+            action: 'mgr/task/getlist',
+            sort: 'id',
+            dir: 'asc'
         },
         listeners: {
             rowDblClick: function (grid, rowIndex, e) {
@@ -187,6 +189,11 @@ Ext.extend(ChessPuzzles.grid.Tasks, MODx.grid.Grid, {
 
     getColumns: function () {
         return [{
+            header: _('chesspuzzles_task_id'),
+            dataIndex: 'id',
+            sortable: true,
+            width: 50,
+        },{
             header: _('chesspuzzles_task_name'),
             dataIndex: 'title',
             sortable: true,

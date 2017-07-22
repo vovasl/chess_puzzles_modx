@@ -9,7 +9,7 @@ $_lang['chesspuzzles_grid_actions'] = 'Действия';
 
 // start level
 $_lang['chesspuzzles_levels'] = 'Уровни';
-$_lang['chesspuzzles_level_id'] = 'Id';
+$_lang['chesspuzzles_level_id'] = 'ID';
 $_lang['chesspuzzles_level_name'] = 'Название';
 $_lang['chesspuzzles_level_description'] = 'Описание';
 $_lang['chesspuzzles_level_active'] = 'Активный';
@@ -36,7 +36,7 @@ $_lang['chesspuzzles_level_select_empty_text'] = 'Выберите уровен�
 
 //start task
 $_lang['chesspuzzles_tasks'] = 'Уроки';
-$_lang['chesspuzzles_task_id'] = 'Id';
+$_lang['chesspuzzles_task_id'] = 'ID';
 $_lang['chesspuzzles_task_name'] = 'Название';
 $_lang['chesspuzzles_task_description'] = 'Описание';
 $_lang['chesspuzzles_task_ball_succ'] = 'Балл (правильно)';
@@ -46,28 +46,28 @@ $_lang['chesspuzzles_task_result'] = 'Правильное решение';
 $_lang['chesspuzzles_task_level_id'] = 'Уровень';
 $_lang['chesspuzzles_task_active'] = 'Активный';
 
-$_lang['chesspuzzles_task_create'] = 'Создать урок';
-$_lang['chesspuzzles_task_update'] = 'Изменить урок';
-$_lang['chesspuzzles_task_enable'] = 'Включить урок';
-$_lang['chesspuzzles_tasks_enable'] = 'Включить уроки';
-$_lang['chesspuzzles_task_disable'] = 'Отключить урок';
-$_lang['chesspuzzles_tasks_disable'] = 'Отключить уроки';
-$_lang['chesspuzzles_task_remove'] = 'Удалить урок';
-$_lang['chesspuzzles_tasks_remove'] = 'Удалить уроки';
-$_lang['chesspuzzles_task_remove_confirm'] = 'Вы уверены, что хотите удалить этот урок?';
-$_lang['chesspuzzles_tasks_remove_confirm'] = 'Вы уверены, что хотите удалить эти уроки?';
+$_lang['chesspuzzles_task_create'] = 'Создать задание';
+$_lang['chesspuzzles_task_update'] = 'Изменить задание';
+$_lang['chesspuzzles_task_enable'] = 'Включить задание';
+$_lang['chesspuzzles_tasks_enable'] = 'Включить задания';
+$_lang['chesspuzzles_task_disable'] = 'Отключить задание';
+$_lang['chesspuzzles_tasks_disable'] = 'Отключить задания';
+$_lang['chesspuzzles_task_remove'] = 'Удалить задание';
+$_lang['chesspuzzles_tasks_remove'] = 'Удалить задания';
+$_lang['chesspuzzles_task_remove_confirm'] = 'Вы уверены, что хотите удалить этот задание?';
+$_lang['chesspuzzles_tasks_remove_confirm'] = 'Вы уверены, что хотите удалить эти задания?';
 
-$_lang['chesspuzzles_task_err_name'] = 'Вы должны указать имя урока.';
-$_lang['chesspuzzles_task_err_ae'] = 'Урок с таким именем уже существует.';
-$_lang['chesspuzzles_task_err_nf'] = 'Урок не найден.';
-$_lang['chesspuzzles_task_err_ns'] = 'Урок не указан.';
-$_lang['chesspuzzles_task_err_remove'] = 'Ошибка при удалении урока.';
-$_lang['chesspuzzles_task_err_save'] = 'Ошибка при сохранении урока.';
+$_lang['chesspuzzles_task_err_name'] = 'Вы должны указать имя задания.';
+$_lang['chesspuzzles_task_err_ae'] = 'Задание с таким именем уже существует.';
+$_lang['chesspuzzles_task_err_nf'] = 'Задание не найдено.';
+$_lang['chesspuzzles_task_err_ns'] = 'Задание не указано.';
+$_lang['chesspuzzles_task_err_remove'] = 'Ошибка при удалении задания.';
+$_lang['chesspuzzles_task_err_save'] = 'Ошибка при сохранении задания.';
 
 
 //start test
 $_lang['chesspuzzles_tests'] = 'Тесты';
-$_lang['chesspuzzles_test_id'] = 'Id';
+$_lang['chesspuzzles_test_id'] = 'ID';
 $_lang['chesspuzzles_test_name'] = 'Название';
 $_lang['chesspuzzles_test_description'] = 'Описание';
 $_lang['chesspuzzles_test_ball_succ'] = 'Балл (правильно)';
@@ -77,20 +77,20 @@ $_lang['chesspuzzles_test_result'] = 'Правильное решение';
 $_lang['chesspuzzles_test_level_id'] = 'Уровень';
 $_lang['chesspuzzles_test_active'] = 'Активный';
 
-$_lang['chesspuzzles_test_create'] = 'Создать тест';
-$_lang['chesspuzzles_test_update'] = 'Изменить тест';
-$_lang['chesspuzzles_test_enable'] = 'Включить тест';
-$_lang['chesspuzzles_tests_enable'] = 'Включить тесты';
-$_lang['chesspuzzles_test_disable'] = 'Отключить тест';
-$_lang['chesspuzzles_tests_disable'] = 'Отключить тесты';
-$_lang['chesspuzzles_test_remove'] = 'Удалить тест';
-$_lang['chesspuzzles_tests_remove'] = 'Удалить тесты';
-$_lang['chesspuzzles_test_remove_confirm'] = 'Вы уверены, что хотите удалить этот тест?';
-$_lang['chesspuzzles_tests_remove_confirm'] = 'Вы уверены, что хотите удалить эти тесты?';
+$_lang['chesspuzzles_test_create'] = 'Создать задание';
+$_lang['chesspuzzles_test_update'] = 'Изменить задание';
+$_lang['chesspuzzles_test_enable'] = 'Включить задание';
+$_lang['chesspuzzles_tests_enable'] = 'Включить задания';
+$_lang['chesspuzzles_test_disable'] = 'Отключить задание';
+$_lang['chesspuzzles_tests_disable'] = 'Отключить задания';
+$_lang['chesspuzzles_test_remove'] = 'Удалить задание';
+$_lang['chesspuzzles_tests_remove'] = 'Удалить задания';
+$_lang['chesspuzzles_test_remove_confirm'] = 'Вы уверены, что хотите удалить этот задание?';
+$_lang['chesspuzzles_tests_remove_confirm'] = 'Вы уверены, что хотите удалить эти задания?';
 
-$_lang['chesspuzzles_test_err_name'] = 'Вы должны указать имя теста.';
-$_lang['chesspuzzles_test_err_ae'] = 'Тест с таким именем уже существует.';
-$_lang['chesspuzzles_test_err_nf'] = 'Тест не найден.';
-$_lang['chesspuzzles_test_err_ns'] = 'Тест не указан.';
-$_lang['chesspuzzles_test_err_remove'] = 'Ошибка при удалении теста.';
-$_lang['chesspuzzles_test_err_save'] = 'Ошибка при сохранении теста.';
+$_lang['chesspuzzles_test_err_name'] = 'Вы должны указать имя задания.';
+$_lang['chesspuzzles_test_err_ae'] = 'Задание с таким именем уже существует.';
+$_lang['chesspuzzles_test_err_nf'] = 'Задание не найден.';
+$_lang['chesspuzzles_test_err_ns'] = 'Задание не указан.';
+$_lang['chesspuzzles_test_err_remove'] = 'Ошибка при удалении задания.';
+$_lang['chesspuzzles_test_err_save'] = 'Ошибка при сохранении задания.';

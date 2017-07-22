@@ -53,7 +53,8 @@ Ext.extend(ChessPuzzles.window.CreateTask, MODx.Window, {
             name: 'result',
             id: config.id + '-result',
             height: 150,
-            anchor: '99%'
+            anchor: '99%',
+            allowBlank: false
         }, {
             xtype: 'chesspuzzles-combo-level',
             fieldLabel: _('chesspuzzles_task_level_id'),
@@ -136,7 +137,8 @@ Ext.extend(ChessPuzzles.window.UpdateTask, MODx.Window, {
             name: 'result',
             id: config.id + '-result',
             height: 150,
-            anchor: '99%'
+            anchor: '99%',
+            allowBlank: false
         }, {
             xtype: 'chesspuzzles-combo-level',
             fieldLabel: _('chesspuzzles_task_level_id'),

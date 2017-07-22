@@ -62,6 +62,8 @@ ChessPuzzles.combo.Level = function (config) {
         url: ChessPuzzles.config['connector_url'],
         baseParams: {
             action: 'mgr/level/getlist',
+            sort: 'id',
+            dir: 'asc'
         }
     });
     ChessPuzzles.combo.Level.superclass.constructor.call(this, config);

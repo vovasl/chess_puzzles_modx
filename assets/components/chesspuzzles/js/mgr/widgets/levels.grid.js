@@ -7,10 +7,12 @@ ChessPuzzles.grid.Levels = function (config) {
         url: ChessPuzzles.config.connector_url,
         fields: this.getFields(config),
         columns: this.getColumns(config),
-        tbar: this.getTopBar(config),
+        //tbar: this.getTopBar(config),
         sm: new Ext.grid.CheckboxSelectionModel(),
         baseParams: {
-            action: 'mgr/level/getlist'
+            action: 'mgr/level/getlist',
+            sort: 'id',
+            dir: 'asc'
         },
         listeners: {
             rowDblClick: function (grid, rowIndex, e) {
@@ -189,6 +191,11 @@ Ext.extend(ChessPuzzles.grid.Levels, MODx.grid.Grid, {
 
     getColumns: function () {
         return [{
+            header: _('chesspuzzles_level_id'),
+            dataIndex: 'id',
+            sortable: true,
+            width: 30,
+        }, {
             header: _('chesspuzzles_level_name'),
             dataIndex: 'levelname',
             sortable: true,
@@ -198,14 +205,18 @@ Ext.extend(ChessPuzzles.grid.Levels, MODx.grid.Grid, {
             dataIndex: 'description',
             sortable: false,
             width: 250,
-        }, {
+        }
+        /*
+        , {
             header: _('chesspuzzles_grid_actions'),
             dataIndex: 'actions',
             renderer: ChessPuzzles.utils.renderActions,
             sortable: false,
             width: 100,
             id: 'actions'
-        }];
+        }
+        */
+        ];
     },
 
     getTopBar: function () {
